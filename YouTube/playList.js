@@ -1,6 +1,6 @@
 //YouTube Video ID
 let playList = [
-   "xK93ninHyss",//NTU Hip-Hop 台大嘻研 2019 Cypher [文藝復興] 強尼 
+   //"xK93ninHyss",//NTU Hip-Hop 台大嘻研 2019 Cypher [文藝復興] 強尼 
    "U7Wod1UVrZ0",//brb. - do me right 
    "Cere6zvT2TY&list=LL&index=17",//COVID-19
    "o3zVtbw0VDM",//keshi - blue
@@ -22,7 +22,7 @@ let playList = [
 
 //播放起訖秒數
 let playTime = [
-    [12,39],//NTU Hip-Hop 台大嘻研 2019 Cypher [文藝復興] 強尼
+   // [12,39],//NTU Hip-Hop 台大嘻研 2019 Cypher [文藝復興] 強尼
     [99,116],//brb.-do me right
     [122,137],//COVID-19
     [109,120],//keshi-blue 
