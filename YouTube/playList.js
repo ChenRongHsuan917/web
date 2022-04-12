@@ -2,7 +2,7 @@
 let playList = [
    "xK93ninHyss",//NTU Hip-Hop 台大嘻研 2019 Cypher [文藝復興] 強尼 
    "U7Wod1UVrZ0",//brb. - do me right 
-   "Cere6zvT2TY&list=LL&index=17",//COVID-19
+   "bjLsh7M24UU",//COVID-19
    "o3zVtbw0VDM",//keshi - blue
    "ZwIw1WiJ-csv",//夢幻女神朱碧石Beauty Lo你幹嘛!
    "MxFexdep0Zo",//超人特攻隊-小傑的攻擊(台語版)
