@@ -12,7 +12,7 @@ function onYouTubeIframeAPIReady(){
             controls:0, //是否顯示控制項
             start:playTime[currentPlay][0],//開始秒數
             end:playTime[currentPlay][1],//結束秒數
-            iv_load_policy:5
+            iv_load_policy:1
         },
         events:{
             onReady:onPlayerReady,
