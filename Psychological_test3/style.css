@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+    padding: 100px;
+}
+h1{
+    font-size:40px;/*字大小*/
+    color:#0b7246	;/*字顏色*/
+}
+.styled  {
+    display: block;
+    width: 324px;
+    padding: 10px;
+    border-width: 0px;
+    border-radius: 100px;
+    margin: 5px auto;
+    font-size: 30px;
+    background-color: #FFFFFF;
+    color: #99BE6A;
+    cursor: grab;
+}
+
+.styled :hover {
+    background-color: #99BE6A;
+}
+
+.styled :active {
+    background-color: #FFFFFF;
+}
+

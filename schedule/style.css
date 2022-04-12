@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+}
+h1{
+    background:#84C1FF;/*背景顏色*/
+    font-size:50px;/*字大小*/
+    color:#fff;/*字顏色*/
+}
+table{
+    width: 60%;
+    margin: auto;
+    font-size: 1.5em;
+}
+th{
+    color:#46A3FF;/*字顏色*/
+    font-size:30px;/*字大小*/
+}
+td{
+    color:#004B97;/*字顏色*/
+    font-size:30px;/*字大小*/
+    font-weight:bold;
+    border-bottom: 1px solid #005AB5;
+}

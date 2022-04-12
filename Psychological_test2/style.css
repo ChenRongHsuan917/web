@@ -1,0 +1,32 @@
+body {
+    text-align: center;
+    padding: 100px;
+}
+
+div{
+    padding: 0px;
+}
+.homepage .imastyle{
+    width: 500px;
+}
+.styled  {
+    display: block;
+    width: 324px;
+    padding: 10px;
+    border-width: 0px;
+    border-radius: 5px;
+    margin: 5px auto;
+    font-size: 30px;
+    background-color: #FF9797;
+    color: #fff;
+    cursor: pointer;
+    cursor: grab;
+}
+
+.styled :hover {
+    background-color: #a02732;
+}
+
+.styled :active {
+    background-color: #FF9797;
+}

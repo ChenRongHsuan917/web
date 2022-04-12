@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>隨機抽獎器</title>
+  <link rel='icon' href="logo.ico"/>
+  <style type="text/css">
+    * {
+      margin:0;
+      padding:0;
+    }
+    body {
+    text-align: center;
+    padding: 150px;
+    }
+    #wrap {
+      width:700px;
+      margin:0 auto;
+      padding:50px 0;
+      background-color:rgb(255, 242, 242);
+    }
+    #inner {
+      width:490px;
+      margin:0 auto;
+      overflow: hidden;
+    }
+    #inner span {
+      float: left;
+      width:40px;
+      height: 40px; 
+      border-radius: 20px;
+      border:1px solid #d9d9d9;
+      line-height: 40px;
+      text-align: center;
+      color:#333;
+      background-color: #f8f8f8;
+      margin:18px 6px;
+    }
+    #inner span.active {
+      background-color: red;
+      color:#fff;
+    }
+    #wrap p {
+      text-align: center;
+    }
+    button {
+      border:none;
+      outline: none;
+      width:120px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 20px;
+      border-radius: 4px;
+    }
+    #selectBtn {
+      background-color: red;
+      color:#fff;
+    }
+    
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrap">
+    <div id="inner">
+      <span>01</span>
+      <span>02</span>
+      <span>03</span>
+      <span>04</span>
+      <span>05</span>
+      <span>06</span>
+      <span>07</span>
+      <span>08</span>
+      <span>09</span>
+      <span>10</span>
+      <span>11</span>
+      <span>12</span>
+      <span>13</span>
+      <span>14</span>
+      <span>15</span>
+      <span>16</span>
+      <span>17</span>
+      <span>18</span>
+      <span>19</span>
+      <span>20</span>
+      <span>21</span>
+      <span>22</span>
+      <span>23</span>
+      <span>24</span>
+      <span>25</span>
+      <span>26</span>
+      <span>27</span>
+      <span>28</span>
+      <span>29</span>
+      <span>30</span>
+      <span>31</span>
+      <span>32</span>
+      <span>33</span>
+      <span>34</span>
+      <span>35</span>
+      <span>36</span>
+    </div>
+    <p>
+      <button id="selectBtn">抽獎</button>
+      <button id="clearBtn">清空</button>
+    </p>
+  </div>
+  <script type="text/javascript">
+  var wrap = document.getElementById("wrap");
+  var selectBtn = document.getElementById("selectBtn");
+  var clearBtn = document.getElementById("clearBtn");
+  var ballList = document.getElementById("wrap").getElementsByTagName("span");
+  function rnd(min, max) {
+    return parseInt(Math.random()*(max - min + 1) + min);
+  }
+  function rndArray(min, max, length) {
+    //先定義一個空陣列
+    var arr = [];
+    //生成一個長度為7的陣列
+    while(arr.length < length) {
+      //生成一個隨機數
+      var rand = rnd(min, max);
+      //判斷生成的隨機數rand是否在陣列arr裡,果然不在，就將這個隨機數插入到數組裡，如果在，執行下一次迴圈
+      if(arr.indexOf(rand) == -1) {
+        arr.push(rand);
+      }
+    }
+    arr.sort(function(a, b){return a - b;})
+    return arr;
+  }
+  selectBtn.onclick = function() {
+    for(var j = 0; j < ballList.length; j++) {
+      ballList[j].className = "";  
+    }
+    var arr = rndArray(1,36,7);
+    console.log(arr);
+    for(var i = 0; i < arr.length; i++) {
+      ballList[arr[i]-1].className = "active";
+    }
+  }
+  clearBtn.onclick = function() {
+    for(var j = 0; j < ballList.length; j++) {
+      ballList[j].className = "";  
+    }
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple EatSnake</title>
+    </head>
+    <style type="text/css">
+    * {
+        margin:0;
+        padding:0
+    }
+    body {
+        background:rgb(185, 166, 148);
+        text-align:center;
+        font-size:12px
+    }
+    div{
+    padding: 5px;
+    }
+    table {
+        margin:80px auto 10px auto;
+        overflow:hidden;
+        border-collapse:collapse;
+    }
+    td {
+        width:20px;
+        height:20px;
+        background: #fff;
+        border:1px #eeeeee solid;
+    }
+    .cover {
+        background:#39c;
+    }
+    .food {
+        background:#33aa33
+    }
+    .block {
+        background:#444
+    }
+    .brake {
+        background:#dd4444
+    }
+    .skate {
+        background:#00f
+    }
+    #say {
+        margin-top:50px;
+        color:white
+    }
+    #help {
+        width:420px;
+        margin:0 auto;
+        line-height:17px;
+        color:white
+    }
+    #help span {
+        float:left;
+        margin-right:10px
+    }
+    #help .box {
+        width:15px;
+        height:15px;
+        margin-right:5px;
+        border:1px 
+    }
+    #btnStart {
+        clear:both;
+        width:100px;
+        height:30px;
+        margin: 10px auto;
+        font-size: 20px;
+        padding:0;
+        background:#dfd7d0;
+        color:rgba(172, 143, 117, 0.726); 
+        border:0;
+        border-radius:30px;
+        cursor: grab;
+    }
+    </style>
+    <body onselectstart="return false">
+        <div></div>
+        <h1 style="color: #fff;">貪吃蛇</h1>
+        <div id="say"><h2>點擊開始鍵 開始遊戲</h2></div>
+        <div id="snakeWrap"></div>
+        <div id="help">
+        <span class="box food"></span><span>綠色食物</span>
+        <span class="box block"></span><span>灰色毒藥</span>
+        <span class="box skate"></span><span>藍色加速</span>
+        <span class="box brake"></span><span>紅色緩慢</span>
+        <span style="float:right">最高分：<strong id="score">0</strong></span>
+        <input type="button" id="btnStart" value="Start" />
+        </div>
+        <p style="display:none">
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="main.js"></script>
+            </body>
+        </p>
+        </body>
+        </html>
+</html>

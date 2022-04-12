@@ -1,0 +1,34 @@
+body {
+    text-align: center;
+    padding: 100px;
+}
+h1{
+    font-size:40px;/*字大小*/
+    color:#AD5A5A	;/*字顏色*/
+}
+div{
+    padding: 10px;
+}
+.homepage .imastyle{
+    width: 500px;
+}
+.styled  {
+    display: block;
+    width: 324px;
+    padding: 10px;
+    border-width: 0px;
+    border-radius: 5px;
+    margin: 5px auto;
+    font-size: 20px;
+    background-color: #dc3545;
+    color: #fff;
+    cursor: grab;
+}
+
+.styled :hover {
+    background-color: #a02732;
+}
+
+.styled :active {
+    background-color: #dc3545;
+}
