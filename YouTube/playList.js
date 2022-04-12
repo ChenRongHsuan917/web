@@ -23,7 +23,7 @@ let playList = [
 //播放起訖秒數
 let playTime = [
     [12,39],//NTU Hip-Hop 台大嘻研 2019 Cypher [文藝復興] 強尼
-    [99,116]//brb.-do me right
+    [99,116],//brb.-do me right
     [122,137],//COVID-19
     [109,120],//keshi-blue 
     [100,115],//夢幻女神朱碧石Beauty Lo你幹嘛!
