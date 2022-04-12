@@ -1,6 +1,7 @@
 //YouTube Video ID
 let playList = [
-   "U7Wod1UVrZ0",//brb. do me right
+   "Qmt9Bzrf29k",//2 soon
+   "o3zVtbw0VDM",//blue
    "q1gm4u-3i2s",//新高前奏
    "cd60NmOEdvU",//骨盆端正
    "q1gm4u-3i2s",//新高27th畢業候選歌 【Blossom / 初綻 】
@@ -10,7 +11,8 @@ let playList = [
 
 //播放起訖秒數
 let playTime = [
-    [0,30],
+    [0,3],//
+    [0,3],//
     [0,30],
     [124,135],//2:04 215
     [276,357],//4:36 5:57
