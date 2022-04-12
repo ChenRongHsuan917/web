@@ -1,10 +1,11 @@
 var topic = [
-    "尚未開學",
-    "國定假日",
-    "環境準備",
-    "隨機性",
-    "重複性",
-    "條件判斷"
+    "清明連假",
+    "期中考週",
+    "四驗 (影片)",
+    "五驗 (100%)",
+    "回家",
+    "六驗",
+    "總驗"
 ];
 
 var startDate = new Date();
@@ -16,4 +17,4 @@ function setMonthAndDay(startMonth, startDay){
     startDate.setMinutes(0);
     startDate.setSeconds(0);
 }
-setMonthAndDay(4,1);
+setMonthAndDay(4,3);
