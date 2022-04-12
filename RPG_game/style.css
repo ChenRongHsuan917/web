@@ -1,6 +1,10 @@
 body{
     text-align: center;
 }
+h1{
+    font-size:40px;/*字大小*/
+    color:#AD5A5A	;/*字顏色*/
+}
 canvas{
     border: 2px solid black;
     background-image: url(images/grasses68.gif);
