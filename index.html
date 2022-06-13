@@ -22,7 +22,7 @@
 						<a href="#" class="icon solid fa-home"><span>Home</span></a>
 						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
 						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-						<a href="https://www.instagram.com/4.x_hsuan__/" class="icon brands fa-instagram"><span>Instagram</span></a>
+						<a href="https://www.instagram.com/4.xxiixxuan__/" class="icon brands fa-instagram"><span>Instagram</span></a>
 						<a href="https://vsco.co/xiixxuan" class="fa fa-images"><span>Gallery</span></a>
 					</nav>
 
@@ -85,16 +85,377 @@
 										<div class="col-4 col-6-medium col-12-small">
 											<a href="Snake/index.html" class="image fit"><img src="images/pic11.png" alt=""></a>
 										</div>
+										<div class="col-4 col-6-medium col-12-small" style="margin:0 auto;">
+											<a href="Account\login\index.html" class="image fit"><img src="images/pic19.jpg" alt=""></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small"><!--抗憂鬱藥物使用人數 bar -->
+											<a href="#C1" class="image fit"><img src="images/pic12.jpg" alt=""></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small" style="margin:0 auto;"><!-- 月曆 -->
+											<a href="#C2" class="image fit"><img src="images/pic13.jpg" alt=""></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small"><!--random -->
+											<a href="random/index.html" class="image fit"><img src="images/pic14.jpg" alt=""></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small" style="margin:0 auto;"><!--LineChart-->
+											<a href="#C4" class="image fit"><img src="images/pic15.jpg" alt=""></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small" style="margin:0 auto;"><!--ScatterPlot-->
+											<a href="ScatterPlot/index.html" class="image fit"><img src="images/pic16.jpg" alt=""></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small" style="margin:0 auto;">
+											<a href="GalaxyTours/index.html" class="image fit"><img src="images/pic17.jpg" alt=""></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small" style="margin:0 auto;">
+											<a href="#C6" class="image fit"><img src="images/pic18.jpg" alt=""></a>
+										</div>
 								</section>
 							</article>
-							<!-- work-work =========================
-							<article id="work1" class="panel">
-								<header>
-									
-								</header>
-							</article>
-                            =========================================-->
 
+							<!-- work C1 -->
+							<article id="C1" class="panel">
+								<header>
+									<h2>抗憂鬱藥物使用人數</h2>
+								</header>
+								<div>
+									<style>
+										.chart .legend {
+											fill: black;
+											font: 14px sans-serif;
+											text-anchor: start;
+											font-size: 12px;
+											}
+											
+											.chart text {
+											fill: white;
+											font: 10px sans-serif;
+											text-anchor: end;
+											}
+											
+											.chart .label {
+											fill: black;
+											font: 14px sans-serif;
+											text-anchor: end;
+											}
+											
+											.bar:hover {
+											fill: brown;
+											}
+											
+											.axis path,
+											.axis line {
+											fill: none;
+											stroke: #000;
+											shape-rendering: crispEdges;
+											}
+									</style>
+									<svg class="chart"></svg>
+									<script src="https://d3js.org/d3.v3.min.js"></script>
+									<script>
+										var data = {
+										labels: [
+											'109', '108', '107',
+											'106', '105', '104'
+										],
+										series: [
+											{
+											label: 'total',
+											values: [1468716,1397197, 1330204,1273561,1212659, 1194395]
+											},
+											{
+											label: 'male',
+											values: [589275, 565222, 542825, 524146, 500503, 494473]
+											},
+											{
+											label: 'female',
+											values: [879441, 831975,787379,749415,712156,699922]
+											},]
+										};
+										
+										var chartWidth       = 300,
+											barHeight        = 20,
+											groupHeight      = barHeight * data.series.length,
+											gapBetweenGroups = 10,
+											spaceForLabels   = 150,
+											spaceForLegend   = 150;
+										
+										
+										var zippedData = [];
+										for (var i=0; i<data.labels.length; i++) {
+										for (var j=0; j<data.series.length; j++) {
+											zippedData.push(data.series[j].values[i]);
+										}
+										}
+										
+										
+										var color = d3.scale.category20();
+										var chartHeight = barHeight * zippedData.length + gapBetweenGroups * data.labels.length;
+										
+										var x = d3.scale.linear()
+											.domain([0, d3.max(zippedData)])
+											.range([0, chartWidth]);
+										
+										var y = d3.scale.linear()
+											.range([chartHeight + gapBetweenGroups, 0]);
+										
+										var yAxis = d3.svg.axis()
+											.scale(y)
+											.tickFormat('')
+											.tickSize(0)
+											.orient("left");
+										
+										
+										var chart = d3.select(".chart")
+											.attr("width", spaceForLabels + chartWidth + spaceForLegend)
+											.attr("height", chartHeight);
+										
+										
+										var bar = chart.selectAll("g")
+											.data(zippedData)
+											.enter().append("g")
+											.attr("transform", function(d, i) {
+											return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/data.series.length))) + ")";
+											});
+										
+										
+										bar.append("rect")
+											.attr("fill", function(d,i) { return color(i % data.series.length); })
+											.attr("class", "bar")
+											.attr("width", x)
+											.attr("height", barHeight - 1);
+										
+										
+										bar.append("text")
+											.attr("x", function(d) { return x(d) - 3; })
+											.attr("y", barHeight / 2)
+											.attr("fill", "red")
+											.attr("dy", ".35em")
+											.text(function(d) { return d; });
+										
+										
+										bar.append("text")
+											.attr("class", "label")
+											.attr("x", function(d) { return - 10; })
+											.attr("y", groupHeight / 2)
+											.attr("dy", ".35em")
+											.text(function(d,i) {
+											if (i % data.series.length === 0)
+												return data.labels[Math.floor(i/data.series.length)];
+											else
+												return ""});
+										
+										chart.append("g")
+											.attr("class", "y axis")
+											.attr("transform", "translate(" + spaceForLabels + ", " + -gapBetweenGroups/2 + ")")
+											.call(yAxis);
+										
+										
+										var legendRectSize = 18,
+											legendSpacing  = 4;
+										
+										var legend = chart.selectAll('.legend')
+											.data(data.series)
+											.enter()
+											.append('g')
+											.attr('transform', function (d, i) {
+												var height = legendRectSize + legendSpacing;
+												var offset = -gapBetweenGroups/2;
+												var horz = spaceForLabels + chartWidth + 40 - legendRectSize;
+												var vert = i * height - offset;
+												return 'translate(' + horz + ',' + vert + ')';
+											});
+										
+										legend.append('rect')
+											.attr('width', legendRectSize)
+											.attr('height', legendRectSize)
+											.style('fill', function (d, i) { return color(i); })
+											.style('stroke', function (d, i) { return color(i); });
+										
+										legend.append('text')
+											.attr('class', 'legend')
+											.attr('x', legendRectSize + legendSpacing)
+											.attr('y', legendRectSize - legendSpacing)
+											.text(function (d) { return d.label; });
+										
+									</script>
+									</div>
+								</article>
+
+								<!-- work C2 -->
+							<article id="C2" class="panel">
+								<header>
+									<h2>My Calendar</h2>
+											<meta name="viewport" content="width=device-width, initial-scale=1.0">
+											<link rel="stylesheet" href="Calendar/css/main.css">
+											<link rel="stylesheet" href="Calendar/css/current-day.css">
+											<link rel="stylesheet" href="Calendar/css/calendar.css">
+											<link rel="icon" href="Calendar/images/logo.ico" type="image/png" sizes="72x72">
+											<script src="https://kit.fontawesome.com/e45ac9a14a.js" crossorigin="anonymous"></script>
+											<title>My Calendar</title>
+
+											<style>
+												#calendar tbody tr td[class*="color"] {
+													border-right: 1px solid rgb(255, 255, 255);
+												}
+												#calendar tbody tr td[class*="color"]:first-child {
+													border-left-color: inherit;
+												}
+												#calendar tbody tr td[class*="color"]:last-child {
+													border-right-color: inherit;
+												}
+												#calendar tbody tr:last-child td[class*="color"] {
+													border-bottom-color: inherit;
+												}
+												#calendar tbody tr:nth-child(5) td[class*="color"] {
+													border-bottom-color: white;
+												}
+												#calendar tbody tr td[class*="prev-month-last-day"] {
+												border-right: 1px solid #9C9C9C !important;
+												}
+											</style>
+								</header>
+								<div>
+																				
+											<h3 class="background-text off-color">1101548</h3>
+											<!-- 月曆表格 -->
+											<div id="calendar">
+												<h1 id="app-name-portrait" class="center off-color">My Calendar</h1>
+												<table>
+												<thead class="color">
+													<tr>
+													<th colspan="7" class="border-color">
+														<h4 id="cal-year"></h4>
+														<div>
+														<i class="fas fa-caret-left icon" onclick="previousMonth();"></i>
+														<h3 id="cal-month"></h3>
+														<i class="fas fa-caret-right icon" onclick="nextMonth();"></i>
+														</div>
+													</th>
+													</tr>
+													<tr>
+													<th class="weekday border-color">Sun</th>
+													<th class="weekday border-color">Mon</th>
+													<th class="weekday border-color">Tue</th>
+													<th class="weekday border-color">Wed</th>
+													<th class="weekday border-color">Thu</th>
+													<th class="weekday border-color">Fri</th>
+													<th class="weekday border-color">Sat</th>
+													</tr>
+												</thead>
+												<tbody id="table-body" class="border-color">
+													<tr>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													</tr>
+													<tr>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td id="current-day">1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													</tr>
+													<tr>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													</tr>
+													<tr>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													</tr>
+													<tr>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													</tr>
+													<tr>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													</tr>
+												</tbody>
+												</table>
+											</div>
+											
+											<script src="Calendar/js/updateDate.js"></script>
+											<script>
+												let today = new Date();  //新增一個Date物件，命名為today
+												let thisYear = today.getFullYear();
+												let thisMonth = today.getMonth();      
+												let thisDate = today.getDate();
+												updateDates();
+												fillInMonth(thisYear, thisMonth, thisDate);    
+											</script>
+										</div>
+							</article>
+							
+							<!-- work C4 -->
+							<article id="C4" class="panel">
+								<header>
+									<h2>LineChart</h2>
+									<link rel="stylesheet" href="../LineChart/style.css">
+								</header>
+								<div>
+									<div class="line-chart-container" style="margin:0 auto;"></div>
+									<script src="//unpkg.com/d3"></script>
+									<script src="../LineChart/main.js"></script>
+								</div>
+							</article>
+
+							<!-- work C6 -->
+							<article id="C6" class="panel">
+								<header>
+									<h2>PieChart</h2>
+									<script src="../PieChart/anychart-base.min.js"></script>
+									<link href="../PieChart/anychart-ui.min.css" type="text/css" rel="stylesheet">
+									<style type="text/css"></style>
+								</header>
+								<div >
+									<div id="container"></div>
+									<script>
+									  anychart.onDocumentReady(function () {
+										var chart = anychart.pie3d([
+										  ['惡性腫瘤(癌症)', 50161],
+										  ['心臟疾病', 20457],
+										  ['肺炎', 13736],
+										  ['腦血管疾病', 11821],
+										  ['糖尿病', 10311],
+										  ['事故傷害', 6767]
+										]);
+										chart.title('2021 台灣五大死因').radius('60%');
+										chart.container('container');
+										chart.draw();
+									  });
+									
+								  </script>
+								</div>
+							</article>
+
+							
 						<!-- Contact -->
 							<article id="contact" class="panel">
 								<header>

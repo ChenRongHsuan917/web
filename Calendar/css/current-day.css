@@ -1,0 +1,23 @@
+#current-day-info{
+  width : 34%;
+  min-height: 100vh;
+}
+
+#current-day-info #app-name-landscape {
+  font-size: 6.2vh;
+  padding: 9vh 0vh 1vh;
+  border-bottom: 1px solid;
+}
+
+#current-day-info h2 {
+  font-size: 6vh;
+  font-weight: 300;
+  margin: 0 0 3vh;
+  padding: 3vh;
+}    
+#current-day-info h1 {
+  font-size: 6.8vh;
+  font-weight: 600;
+  margin: 4vh 0;
+}
+

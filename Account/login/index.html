@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css"><!-- css -->
+  <link rel='icon' href="images/logo.ico"><!-- icon -->
+</head>
+
+<body>
+
+    <div class="header">
+      <h3>記帳本</h3>
+      <div class="login">
+        <input class="button styled" id="button" type="button" value="登入" onclick="location.href='../login/index.html'">
+      </div>
+    </div>
+    
+      <section class="container ">
+        
+        <h4 class="container-warn">*必填欄位</h4>
+        <h1 class="container-title">立即登入</h1>
+        
+        
+        <form action="/login" method="POST">
+          <div class="inform">
+            <div class="email">
+              <label class="emailf" for="email">信箱<span class="text-warning"> *</span></label>
+              <input type="email" class="" id="emailf" name="email" placeholder="Enter email" required />
+            </div>
+            <div class="password">
+              <label class="passwordf" for="password">密碼<span class="text-warning"> *</span></label>
+              <input type="password" class="passwordf" id="password" name="password" placeholder="Enter password" required />
+            </div>
+         </div>
+
+          <div class="">
+            <input class="LoginButt" id="button" type="button" value=" 登入 " >
+          </div>
+        </form>
+
+        <p class="register">
+          還沒有帳號嗎？ <a href="../register/index.html" class="text-info">註冊</a>
+        </p>
+      </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+    <!--   <script src="data.js"></script>    -->
+    
+</body>
+</html>

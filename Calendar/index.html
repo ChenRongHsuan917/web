@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Calendar/css/main.css">
+  <link rel="stylesheet" href="Calendar/css/current-day.css">
+  <link rel="stylesheet" href="Calendar/css/calendar.css">
+  <link rel="icon" href="Calendar/images/logo.ico" type="image/png" sizes="72x72">
+  <script src="https://kit.fontawesome.com/e45ac9a14a.js" crossorigin="anonymous"></script>
+  <title>My Calendar</title>
+
+  <style>
+    #calendar tbody tr td[class*="color"] {
+        border-right: 1px solid rgb(255, 255, 255);
+    }
+    #calendar tbody tr td[class*="color"]:first-child {
+        border-left-color: inherit;
+    }
+    #calendar tbody tr td[class*="color"]:last-child {
+        border-right-color: inherit;
+    }
+    #calendar tbody tr:last-child td[class*="color"] {
+        border-bottom-color: inherit;
+    }
+    #calendar tbody tr:nth-child(5) td[class*="color"] {
+        border-bottom-color: white;
+    }
+    #calendar tbody tr td[class*="prev-month-last-day"] {
+      border-right: 1px solid #9C9C9C !important;
+    }
+  </style>
+</head>
+
+<body>
+  <h3 class="background-text off-color">1101548</h3>
+  <!-- 月曆表格 -->
+  <div id="calendar">
+    <h1 id="app-name-portrait" class="center off-color">My Calendar</h1>
+    <table>
+      <thead class="color">
+        <tr>
+          <th colspan="7" class="border-color">
+            <h4 id="cal-year"></h4>
+            <div>
+              <i class="fas fa-caret-left icon" onclick="previousMonth();"></i>
+              <h3 id="cal-month"></h3>
+              <i class="fas fa-caret-right icon" onclick="nextMonth();"></i>
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th class="weekday border-color">Sun</th>
+          <th class="weekday border-color">Mon</th>
+          <th class="weekday border-color">Tue</th>
+          <th class="weekday border-color">Wed</th>
+          <th class="weekday border-color">Thu</th>
+          <th class="weekday border-color">Fri</th>
+          <th class="weekday border-color">Sat</th>
+        </tr>
+      </thead>
+      <tbody id="table-body" class="border-color">
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td id="current-day">1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <script src="Calendar/js/updateDate.js"></script>
+  <script>
+    let today = new Date();  //新增一個Date物件，命名為today
+    let thisYear = today.getFullYear();
+    let thisMonth = today.getMonth();      
+    let thisDate = today.getDate();
+    updateDates();
+    fillInMonth(thisYear, thisMonth, thisDate);    
+  </script>
+  
+</body>
+</html>

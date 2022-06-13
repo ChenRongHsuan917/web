@@ -1,0 +1,10 @@
+.styled  {
+    display: block;
+    border-width: 0px;
+    border-radius: 10px;
+    margin: 10px ;
+    font-size: 20px;
+    background-color: #6697b3;
+    color: #fff;
+    cursor: grab;
+}

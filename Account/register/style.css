@@ -1,0 +1,108 @@
+body {
+    min-height: 100vh;
+    background-image: url('../images/bg2.jpg');
+    backdrop-filter: brightness(60%);
+    padding: 0px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+.header{
+    height: 60px;
+    background-color: #55575b;    
+}
+
+.login{
+    position: fixed;
+    right: 5%;
+    top: 2%;
+    font-size:20px;
+}
+
+.styled  {
+    display: block;
+    border-width: 0px;
+    border-radius: 5px;
+    margin: 5px auto;
+    right: 5%;
+    font-size: 20px;
+    background-color: #5a5f68;
+    border:1px rgb(255, 255, 255) solid;
+    color: #fff;
+    cursor: grab;
+}
+
+.styled :hover {
+    color:#113c51;
+    background-color: #ffffff;
+}
+
+.styled :active {
+    background-color: #113c51;
+}
+
+h3{
+    position:absolute;
+    top:-20px;
+    left:20px;
+    font-size:30px;/*字大小*/
+    color:#edb340	;/*字顏色*/
+}
+
+.container {
+    position:relative;
+    width: 600px;
+    height:300px;
+    top:50px;
+    margin:0px auto;
+    text-align:center;
+    border-radius: 20px;
+    background-color: rgba(34, 38, 42, 0.8);
+}
+
+.container-warn{
+    position:absolute;
+    left:auto;
+    top:25px;
+    color: #edb340;
+}  
+
+.container-title{
+    position:relative;
+    text-align:center;
+    font-size:30px;
+    top:15px;
+    color: #fff;
+} 
+
+.inform{
+    position:relative;
+    margin:0px auto;
+    color: #fff;
+    width: 500px;
+    height:70px;
+    top: 30px;
+}
+
+.text-warning{
+    color: #edb340;
+}
+
+.LoginButt{
+    border-width: 0px;
+    border-radius: 5px;
+    margin: 5px auto;
+    position:relative;
+    top:10px;
+    font-size: 18px;
+    background-color: #535660;
+    color: #fff;
+    cursor: grab;
+}
+
+.register{
+    position:relative;
+    top:100px;
+    color: rgb(171, 169, 177);
+}

@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+}
+body{
+    background-color: #ebf3f7;
+}
+
+img{
+    text-align: center;
+    border: 2px solid #ebf3f7;
+    width: 70%;
+    margin: 40px;
+    padding: 15px;
+}
+
+.centered{
+    text-align: center;
+}
+
+.colorFont{
+    color: rgb(32, 59, 122);
+}
+
+.styled  {
+    display: block;
+    border-width: 0px;
+    border-radius: 10px;
+    margin: 10px ;
+    font-size: 20px;
+    background-color: #6697b3;
+    color: #fff;
+    cursor: grab;
+}
